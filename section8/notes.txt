@@ -1,0 +1,40 @@
+The Canon
+
+Fundamental quantum algorithms. 
+Developed in early years of QC, first to show computational speedups with QCs.
+Most still require more advanced QC then we currently have.
+
+Several algs known as "Black Box" quantum algorithms(QA)
+There is an underlying function unknown to us. 
+We construct a function, called an Oracle, which we can query to determine the relationship between certain inputs and outputs.
+
+We query the praacle function with specific inputs in the quantum register and reversibly write the output of the oracle function into that register.
+
+We have access to an oracle Of s.th.
+Of(|x>|y>) = |x (+%2) f(y)> (where (+%2) means addition mod 2)
+
+Of is unitary (reversible) because ot os self-inverse.
+
+Each query is at least one step in an algorithm.
+
+We can also give a classical and QC access to the same oracle and see which can perform better after that.
+
+The Deutsch-Jozsa algorithms
+Deutsch's alg. was the first to demonstrate clear advantage of QC over classical.
+We are given a function from one bit to one bit, f: {0, 1} -> {0, 1}
+There are exactly four one-in, one-out bool functions:
+f_0: 0 -> 0, 1 -> 0
+f_1: 0 -> 1, 1 -> 1
+f_x: 0 -> 0, 1 -> 1
+f-x: 0 -> 1, 1 -> 0
+
+The first two are constant functions, the other two are balanced functions, since they have an equal number of 0s and 1s across there outputs.
+
+Deutsch's problem:
+Given access to a one bit input and one bit output bool function, determine by querying the function as few times as possible whether the function
+is balanced or constant.
+
+In a classical computer, you would have to query twice, for input 0 and input 1, but in a QC you only have to query ONCE!
+
+
+ 
