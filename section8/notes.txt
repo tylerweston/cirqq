@@ -36,5 +36,21 @@ is balanced or constant.
 
 In a classical computer, you would have to query twice, for input 0 and input 1, but in a QC you only have to query ONCE!
 
+Note that the classical function above is NOT reversible due to the constant functions f_0 and f_1. That is, given the output, we cannot uniquely
+determine the input to the function. To run this on a quantum computer, we need to make the function reversible!
+
+A trick to turn a classical non-reversible function into a reversible one is to compute the value in an extra register (Or, equivalently, store the
+inputs to the function in an extra register). 
+Suppose we have an n bit input x and we are computing a (potentially non-reversible) Boolean function f(x).
+Then, we can implement this via a unitary U_f that acts on n + 1 qubits.
+
+U_f(|x>|y>) := |x>|y(+)f(x)>
+
+This shows how U_f acts on all computational basis states |x> and the single output qubit |y>
+Since we have defined U_f on the computational basis, we can extend its definition via linearity.
+To see this is reversible, we note that applying the transformation twice returns the state to its original form.
+Even further, U_f is unitary since it maps the orthonormal computational basis to itself and so preserves lengths of vectors it acts on.
+
+
 
  
